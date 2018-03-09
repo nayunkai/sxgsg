@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+
+<div class="whole" ng-app="loginControllers" ng-controller="loginController">
+    <form class="loginForm" name="loginform" accept-charset="utf-8" id="login_form" method="post">
+        <input type="hidden" name="did" value="0"/>
+
+        <h1><sup>2016</sup>尚兴国术馆欢迎您！！<sub>2017</sub></h1>
+        <div>
+            <label class="inputUnameHead" for="userName" ng-model="name">帐号：</label>
+            <input type="text" id="userName"/>
+        </div>
+
+        <div>
+            <label class="inputUpassHead" for="userPass">密码：</label>
+            <input type="text" id="userPass"/>
+        </div>
+        <div id="error_box"></div>
+
+        <div class="submit">
+            <input type="submit" value="登 录" style="width:150px;" id="inputSubmit"/>
+        </div>
+    </form>
+
+</div>
+
+    </body>
+</html>

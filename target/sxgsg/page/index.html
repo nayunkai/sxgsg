@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <div id="app2">
+        <span v-bind:title="message">
+            鼠标悬停几秒钟查看此处动态绑定的提示信息！
+        </span>
+    </div>
+
+    <div id="app3">
+        <p v-if="seen"> you will see me!!</p>
+    </div>
+
+    <div id="app4">
+        <ol>
+            <li v-for="test in tests">
+                {{test.text}}
+            </li>
+        </ol>
+    </div>
+    <div id="app5">
+        <p>{{ message }}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
+    </div>
+
+    <div class="app6">
+        <p>{{message}}</p>
+        <input v-model="message"/>
+    </div>
+
+    <script src="index_test.js"></script>
+</body>
+</html>
+

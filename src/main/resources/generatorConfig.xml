@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <context id="mysqlgenerator" targetRuntime="MyBatis3">
+
+        <!--生成注释 start-->
+        <commentGenerator>
+        <!-- <commentGenerator type="cn.chinaclear.pop.mybatis.PopCommentGenerator">-->
+            <property name="suppressAllComments" value="false" />
+            <property name="javaFileEncoding" value="UTF-8"/>
+        </commentGenerator>
+        <!--生成注释 end-->
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3307/sxgs?characterEncoding=utf8&amp;useSSL=true"
+                        userId="root"
+                        password="mysqladmin" />
+
+        <!-- 指定javaBean生成的位置 start -->
+        <javaModelGenerator targetPackage="com.yunshi.kongfu.entity" targetProject="src/main/java" >
+            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+            <property name="enableSubPackages" value="true" />
+            <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- 指定javaBean生成的位置 end -->
+
+        <!--指定sql映射文件生成的位置 start -->
+        <sqlMapGenerator targetPackage="mapper_xml" targetProject="src/main/resources" >
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+        <!--指定sql映射文件生成的位置 end -->
+
+        <!-- 指定dao接口生成的位置，mapper接口 start -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.yunshi.kongfu.mapper" targetProject="src/main/java" >
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+        <!-- 指定dao接口生成的位置，mapper接口 end -->
+
+        <!-- table表生成对应的DoaminObject start -->
+        <table tableName="kongfu_user" domainObjectName="User" ></table>
+        <table tableName="kongfu_rose" domainObjectName="Rose"></table>
+        <!-- table表生成对应的DoaminObject end -->
+
+    </context>
+
+</generatorConfiguration>
